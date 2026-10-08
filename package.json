@@ -1,0 +1,10 @@
+{
+  "name": "bridex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Campus circular marketplace",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}
