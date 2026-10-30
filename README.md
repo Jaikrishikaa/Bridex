@@ -1,6 +1,6 @@
 # Bridex
 
-A full-stack campus circular marketplace for buying, selling, lending, borrowing, exchanging, and donating academic resources.
+A full-stack campus circular marketplace for buying, selling, lending, borrowing, and exchanging academic resources.
 
 ## Run locally
 
@@ -19,7 +19,7 @@ The application requires only Node.js 18+ and uses no third-party dependencies.
 - Marketplace listing search and filters
 - Create listings persisted by the backend
 - Saved items and student dashboards
-- Buy, borrow, exchange, and donation requests
+- Buy, borrow, and exchange requests
 - Complaint submission and an admin dashboard
 - JSON persistence in `data/bridex.json`, automatically created on first run
 
@@ -32,7 +32,7 @@ The application requires only Node.js 18+ and uses no third-party dependencies.
 | `GET /api/listings` | Browse and filter listings |
 | `POST /api/listings` | Create a listing |
 | `POST /api/listings/:id/save` | Save or unsave an item |
-| `POST /api/listings/:id/requests` | Request to buy, borrow, claim, or exchange |
+| `POST /api/listings/:id/requests` | Request to buy, borrow, or exchange |
 | `GET /api/me/dashboard` | Read the signed-in user's activity |
 | `POST /api/complaints` | File a complaint |
 | `GET /api/admin/overview` | View live admin metrics |
