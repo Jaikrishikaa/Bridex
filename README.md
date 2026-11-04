@@ -2,6 +2,8 @@
 
 A full-stack campus circular marketplace for buying, selling, lending, borrowing, and exchanging academic resources.
 
+For a complete page-by-page project report, screenshot checklist, architecture explanation, and prototype limitations, see [PROTOTYPE_DESIGN_AND_IMPLEMENTATION.md](PROTOTYPE_DESIGN_AND_IMPLEMENTATION.md).
+
 ## Run locally
 
 ```powershell
@@ -14,13 +16,13 @@ The application requires only Node.js 18+ and uses no third-party dependencies.
 
 ## Included workflow
 
-- College-email registration and login (`@psgtech.ac.in`)
+- College-email, Student ID, and private student-ID-card proof collection during registration (`@psgtech.ac.in`)
 - Password hashing with Node `scrypt` and bearer-token sessions
 - Marketplace listing search and filters
-- Create listings persisted by the backend
+- Create listings with 2–6 required resource photos, persisted by the backend
 - Saved items and student dashboards
 - Buy, borrow, and exchange requests
-- Complaint submission and an admin dashboard
+- Complaint submission and a student dashboard
 - JSON persistence in `data/bridex.json`, automatically created on first run
 
 ## HTTP API
@@ -35,6 +37,7 @@ The application requires only Node.js 18+ and uses no third-party dependencies.
 | `POST /api/listings/:id/requests` | Request to buy, borrow, or exchange |
 | `GET /api/me/dashboard` | Read the signed-in user's activity |
 | `POST /api/complaints` | File a complaint |
-| `GET /api/admin/overview` | View live admin metrics |
 
 For production, swap the JSON data layer in `server.js` for PostgreSQL/object storage and place the app behind HTTPS. The API surface is organized so that migration remains straightforward.
+
+> A real ID-card authenticity decision and current enrollment/completion status require an authorized college records integration plus an OCR/AI verification provider. The current app records proof securely in its private data store and marks the account as `pending`; it does not falsely claim that a card or academic record has been verified.
